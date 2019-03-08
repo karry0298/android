@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.collekarry.intern.WardDetailsActivity">
+    <item
+        android:id="@+id/action_add_meds"
+        android:orderInCategory="100"
+        android:title="@string/add_medication"
+        />
+    <item
+        android:id="@+id/action_add_history"
+        android:orderInCategory="100"
+        android:title="@string/add_history"
+        />
+    <item
+        android:id="@+id/action_delete_ward"
+        android:orderInCategory="100"
+        android:title="@string/delete_ward" />
+</menu>

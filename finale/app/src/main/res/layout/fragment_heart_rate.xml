@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HeartRateFragment"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    >
+
+
+    <ImageView
+        android:id="@+id/bgImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:alpha="1"
+        android:scaleType="fitXY"
+        android:src="@drawable/bbba" />
+
+    <TextView
+        android:id="@+id/hrRateTitilr"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="HEART RATE"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="33sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/heartRateDisp"
+        android:layout_width="179dp"
+        android:layout_height="172dp"
+        android:layout_below="@+id/hrRateTitilr"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circulbod"
+        android:paddingTop="45dp"
+        android:text="6000"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/avgRate"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="166dp"
+        android:layout_toStartOf="@+id/heartRateDisp"
+        android:background="@drawable/rect"
+        android:fontFamily="@font/roboto_thin"
+        android:text="AVG"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/maxRate"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_alignTop="@+id/avgRate"
+        android:layout_toEndOf="@+id/heartRateDisp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="MAX"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/maxVal"
+        android:layout_width="86dp"
+        android:layout_height="85dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/avgRate"
+        android:layout_marginEnd="53dp"
+        android:layout_marginTop="-166dp"
+        android:background="@drawable/circulbod"
+        android:paddingTop="30dp"
+        android:text="6000"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/avgVal"
+        android:layout_width="86dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/avgRate"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="-166dp"
+        android:background="@drawable/circulbod"
+        android:paddingTop="30dp"
+        android:text="6000"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

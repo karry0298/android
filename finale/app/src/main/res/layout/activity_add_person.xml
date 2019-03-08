@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".addPersonActivity"
+    >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="Add ward"
+            android:textAlignment="center"
+            android:textAppearance="@android:style/TextAppearance.WindowTitle"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/imageButton"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="imageClicked"
+
+                android:src="@drawable/dpic"
+
+                android:tag="R.drawable.dpic.jpg"
+
+                app:civ_border_width="0dp"
+                app:civ_shadow="false" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/nameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                tools:context=".addPersonActivity">
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart">
+
+                    <EditText
+                        android:id="@+id/ageInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:hint="Age"
+                        android:inputType="numberDecimal"
+
+                        />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Switch
+                    android:id="@+id/genderSwitch"
+                    style="@style/genderSwitchStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:layout_marginLeft="60dp"
+                    android:layout_marginStart="60dp"
+
+                    android:layout_weight="0"
+                    android:checked="false"
+                    android:fontFamily="@font/maven_pro_black"
+                    android:gravity="center|start"
+                    android:paddingEnd="0dp"
+                    android:paddingStart="0dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:showText="true"
+                    android:splitTrack="false"
+
+                    android:textOff="M"
+                    android:textOn="F"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+
+                    android:thumbTint="@color/grey"
+                    tools:checked="false" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Medicines"
+                    android:textAlignment="viewStart"
+                    android:textSize="24sp" />
+
+                <ImageButton
+                    android:id="@+id/button_add_med"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:onClick="addMed"
+                    android:src="@drawable/ic_add"
+                    android:background="@android:color/transparent"
+                    android:tag="add" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/med_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/roboto"
+                android:text="History"
+                android:textAlignment="viewStart"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/button_add_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:onClick="addHistory"
+                android:src="@drawable/ic_add"
+                android:background="@android:color/transparent"
+                android:tag="add" />
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/history_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:fontFamily="@font/roboto"
+            android:text="Select Docter:"
+            android:textAlignment="viewStart"
+            android:textSize="24sp" />
+
+
+        <Spinner
+            android:id="@+id/docSpin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/submit_button"
+            android:fontFamily="@font/roboto_thin"
+            android:foregroundGravity="center"
+            android:onClick="submitButtonClicked"
+            android:text="Submit"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
